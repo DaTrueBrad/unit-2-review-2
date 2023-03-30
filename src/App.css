@@ -3,7 +3,6 @@
   --lift: #2c2c2c;
   --faded: #838383;
 
-  /* !Red */
   --accent: 360, 100%;
   --l: 38%;
 
@@ -43,38 +42,10 @@ header {
   text-align: center;
 }
 
-.big-title {
-  font-size: 64px;
-  color: var(--color-primary);
-}
-
-p {
-  font-size: 20px;
-}
-
-.word {
-  font-size: 32px;
-  color: var(--color-primary);
-}
-
 nav {
   display: flex;
   flex-direction: row;
   gap: 8px;
-}
-
-.nav-btn {
-  background-color: var(--color-primary);
-  border-radius: 3px;
-  color: white;
-  min-width: 50px;
-  transition: all 0.05s ease-in-out;
-}
-
-.nav-btn:hover {
-  --darken: hsl(var(--accent), calc(var(--l) - 5%));
-background-color: var(--darken);
-  transition: all 0.05s ease-in-out;
 }
 
 button {
@@ -113,14 +84,6 @@ form {
   align-items: center;
 }
 
-.row-container {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
 .col-container {
   display: flex;
   flex-direction: column;
@@ -138,27 +101,6 @@ form {
   box-sizing: border-box;
   box-shadow: 0px 3px 10px rgba(0,0,0,0.5);
 }
-
-.card-image {
-  width: 300px;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-}
-
-.colored-text {
-  color: var(--color-primary);
-}
-
-.red {
-  color: red;
-}
-
-.green {
-  color: green;
-}
-
-
-/* ? CREATED BY BRADYYYYYY */
 
 .team-card {
   width: 15%;
