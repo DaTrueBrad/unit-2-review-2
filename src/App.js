@@ -1,23 +1,35 @@
-import logo from './logo.svg';
+import { useState, useEffect, useContext } from 'react';
 import './App.css';
+import Header from './components/Header';
+import Team from './components/Team';
+import Pokedex from './components/Pokedex';
+import axios from 'axios';
+import PokemonContext from './state/PokemonContext';
 
 function App() {
+  const {dispatch} = useContext(PokemonContext)
+
+  const getPokemon = () => {
+    axios
+      .get('https://pokeapi.co/api/v2/pokemon?limit=1000')
+      .then((res) => {
+        console.log(res)
+        dispatch({type: "SAVE_POKEDEX", payload: res.data.results})
+      })
+      .catch((err) => {
+        console.error(err)
+      })
+  }
+
+  useEffect(() => {
+    getPokemon()
+  },[])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Team />
+      <Pokedex />
     </div>
   );
 }
